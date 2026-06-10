@@ -1,0 +1,23 @@
+{
+  "name": "crypto-shield-suite",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Unified wallet/contract security suite: tx simulator, rug pull detector, approval revoker.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev:api": "npm run dev -w @crypto-shield/api",
+    "dev:web": "npm run dev -w @crypto-shield/web",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

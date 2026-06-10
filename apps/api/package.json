@@ -1,0 +1,30 @@
+{
+  "name": "@crypto-shield/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc -p tsconfig.json --watch --preserveWatchOutput & node --watch dist/index.js",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "migrate": "tsc -p tsconfig.json && node dist/scripts/migrate.js"
+  },
+  "dependencies": {
+    "@crypto-shield/risk-engine": "*",
+    "@crypto-shield/types": "*",
+    "@fastify/cors": "^10.0.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.1.0",
+    "ioredis": "^5.4.1",
+    "pg": "^8.13.1",
+    "stripe": "^17.3.1",
+    "viem": "^2.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "typescript": "^5.6.3"
+  }
+}

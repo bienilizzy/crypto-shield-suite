@@ -1,0 +1,17 @@
+name: Check approvals (premium alerts)
+
+on:
+  schedule:
+    # Every 15 minutes. Adjust to taste - more frequent polling means faster
+    # alerts but more RPC/API usage.
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  check-approvals:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call /cron/check-approvals
+        run: |
+          curl --fail -sS -X POST "${{ secrets.CRON_API_URL }}/cron/check-approvals" \
+            -H "x-cron-secret: ${{ secrets.CRON_SECRET }}"

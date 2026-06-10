@@ -1,0 +1,4 @@
+{
+  "installCommand": "cd ../.. && npm install",
+  "buildCommand": "cd ../.. && npm run build -w @crypto-shield/types && npm run build -w @crypto-shield/web"
+}
